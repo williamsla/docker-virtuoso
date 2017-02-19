@@ -8,7 +8,7 @@ RUN apt-get update \
         && pip install crudini
 
 # Set Virtuoso commit SHA to Virtuoso 7.2.4 release (25/04/2016)
-ENV VIRTUOSO_COMMIT 96055f6a70a92c3098a7e786592f4d8ba8aae214
+ENV VIRTUOSO_COMMIT 0468195ac3923c0a9f010fa2da7e93da9febe228
 
 # Get Virtuoso source code from GitHub and checkout specific commit
 # Make and install Virtuoso (by default in /usr/local/virtuoso-opensource)
@@ -41,6 +41,8 @@ ADD virtuoso.sh /virtuoso.sh
 VOLUME /data
 WORKDIR /data
 EXPOSE 8890
+EXPOSE 8891
 EXPOSE 1111
+EXPOSE 1112
 
 CMD ["/bin/bash", "/virtuoso.sh"]
